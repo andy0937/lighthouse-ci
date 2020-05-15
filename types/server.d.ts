@@ -4,7 +4,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-type StorageMethod_ = import('../src/server/api/storage/storage-method.js');
+type StorageMethod_ = import('../packages/server/src/api/storage/storage-method.js');
 
 declare global {
   namespace LHCI {
@@ -19,6 +19,7 @@ declare global {
         id: string;
         name: string;
         externalUrl: string;
+        token: string;
         createdAt?: string;
         updatedAt?: string;
       }
@@ -84,10 +85,12 @@ declare global {
       export type StorageMethod = StorageMethod_;
 
       export interface StorageOptions {
-        storageMethod: 'sql' | 'bigquery';
-        sqlDialect: 'sqlite' | 'mysql';
+        storageMethod: 'sql' | 'spanner';
+        sqlDialect: 'sqlite' | 'mysql' | 'postgres';
         sqlDatabasePath?: string;
-        sqlDangerouslyForceMigration?: boolean;
+        sqlConnectionSsl?: string;
+        sqlConnectionUrl?: string;
+        sqlDangerouslyResetDatabase?: boolean;
       }
 
       export interface Options {

@@ -12,13 +12,37 @@ declare global {
   type UnPromisify<T> = T extends Promise<infer U> ? U : T;
 
   namespace LH {
+    export type DetailsType =
+      | 'node'
+      | 'code'
+      | 'bytes'
+      | 'ms'
+      | 'timespanMs'
+      | 'text'
+      | 'numeric'
+      | 'url'
+      | 'thumbnail'
+      | 'unknown';
+
     export interface AuditResult {
       id?: string;
       title?: string;
       description?: string;
       score: number | null;
+      displayValue?: string;
       numericValue?: number;
-      details?: {type: string; items?: any[]; overallSavingsMs?: number};
+      details?: {
+        type: string;
+        items?: Array<Record<string, any>>;
+        overallSavingsMs?: number;
+        overallSavingsBytes?: number;
+        headings?: Array<{
+          key: string;
+          valueType?: DetailsType;
+          itemType?: DetailsType;
+          label?: string;
+        }>;
+      };
       scoreDisplayMode?:
         | 'notApplicable'
         | 'informative'

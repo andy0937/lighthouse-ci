@@ -5,6 +5,6 @@
  */
 
 declare namespace JSX {
-  type Element = preact.JSX.Element;
-  type HTMLAttributes = preact.JSX.HTMLAttributes;
+  type Element = import('preact').JSX.Element;
+  type HTMLAttributes = import('preact').JSX.HTMLAttributes;
 }

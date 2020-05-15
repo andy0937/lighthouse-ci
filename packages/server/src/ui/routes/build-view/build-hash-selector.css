@@ -1,0 +1,75 @@
+/**
+ * @license Copyright 2019 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ */
+
+.build-hash-selector {
+  position: fixed;
+  z-index: 10;
+
+  top: var(--page-header-height);
+  left: 0;
+  right: 0;
+  max-height: 50vh;
+
+  overflow: auto;
+
+  background: var(--highlighted-background-color);
+  border-bottom: 2px solid var(--base-border-color);
+}
+
+.build-hash-selector__list {
+  list-style: none;
+  padding: 0;
+  padding-bottom: var(--base-spacing);
+  margin-top: var(--base-spacing);
+}
+
+.build-hash-selector__list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: calc(var(--base-spacing) / 2);
+  font-weight: var(--medium-font-weight);
+  border-radius: 5px;
+}
+
+.build-hash-selector__selection {
+  width: 90px;
+  min-width: 90px;
+}
+
+.build-hash-selector__hash {
+  color: var(--base-text-color);
+  font-family: var(--monospace-font-family);
+}
+
+.build-hash-selector__avatar {
+  width: var(--avatar-image-size);
+  height: var(--avatar-image-size);
+
+  border-radius: 100%;
+  margin: 0 var(--base-spacing);
+}
+
+.build-hash-selector__commit {
+  flex-grow: 1;
+  flex-shrink: 10;
+  text-overflow: ellipsis;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.build-hash-selector__links {
+  display: none;
+}
+
+.build-hash-selector__list li:hover .build-hash-selector__links {
+  display: inline;
+}
+
+.build-hash-selector__links > * {
+  margin: 0 calc(var(--base-spacing) / 2);
+}

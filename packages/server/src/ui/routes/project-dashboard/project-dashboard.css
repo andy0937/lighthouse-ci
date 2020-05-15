@@ -1,0 +1,58 @@
+/**
+ * @license Copyright 2019 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ */
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__recent-activity h2 {
+  font-size: var(--header-font-size);
+  padding: var(--base-spacing);
+}
+
+.dashboard__build-list {
+  width: calc(100% - var(--base-spacing) * 2);
+  margin-left: var(--base-spacing);
+}
+
+.dashboard__build-list {
+  border-collapse: collapse;
+}
+
+.dashboard__build-list td {
+  padding: var(--base-spacing);
+}
+
+.dashboard__build-list tr:nth-child(odd) {
+  background-color: var(--base-background-color);
+}
+
+.dashboard__build-list tr:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-100);
+}
+
+.dashboard__build-list i {
+  margin: 0 calc(var(--base-spacing) / 2);
+}
+
+.build-list__avatar img {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+
+.build-list__commit,
+.build-list__branch {
+  font-weight: var(--medium-font-weight);
+}
+
+.build-list__hash,
+.build-list__date {
+  color: var(--secondary-text-color);
+  white-space: nowrap;
+}
